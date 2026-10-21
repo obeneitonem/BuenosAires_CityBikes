@@ -1,12 +1,4 @@
-# TP Final - G23 - CityBikes EcoBici Buenos Aires
-
-## Integrantes
-
-- Facundo Pellicori (@FacundoPellicori)
-- Marcos Benson (@marcosbenson)
-- Nombre Apellido (@usuario-github)
-- João Baptista Luis Kaniki (@YarkJl90)
-- Olivia Beneitone Marty (@obeneitonem)
+# TP Final - CityBikes EcoBici Buenos Aires
 
 ## API elegida
 
