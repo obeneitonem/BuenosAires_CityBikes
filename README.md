@@ -89,7 +89,3 @@ docker compose up -d --build
 docker compose down
 docker compose down -v
 ```
-
-## Estructura del proyecto
-
-Ver la seccion **"Esqueleto de entrega"** en [`TpFinal/README.md`](../../README.md).
