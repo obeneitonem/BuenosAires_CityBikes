@@ -1,7 +1,8 @@
 services:
   airflow:
     build: .
-    container_name: g23_airflow
+    container_name: ecobici_airflow
+    
     env_file: .env
     environment:
       - AIRFLOW_UID=${AIRFLOW_UID:-0}
@@ -26,11 +27,11 @@ services:
         condition: service_healthy
     restart: "no"
     networks:
-      - g23_network
+      - ecobici_network
 
   airflow_db:
     image: postgres:17-alpine
-    container_name: g23_airflow_db
+    container_name: ecobici_airflow_db
     environment:
       - POSTGRES_USER=${AF_DB_USER}
       - POSTGRES_PASSWORD=${AF_DB_PASS}
@@ -45,14 +46,14 @@ services:
       retries: 10
     restart: "no"
     networks:
-      - g23_network
+      - ecobici_network
 
   data_warehouse:
     build:
       context: .
       dockerfile: Dockerfile.postgres
-    image: g23_data_warehouse:custom
-    container_name: g23_data_warehouse
+    image: ecobici_data_warehouse:custom
+    container_name: ecobici_data_warehouse
     environment:
       - POSTGRES_USER=${SOURCE_DB_USER}
       - POSTGRES_PASSWORD=${SOURCE_DB_PASS}
@@ -68,11 +69,11 @@ services:
       retries: 5
     restart: "no"
     networks:
-      - g23_network
+      - ecobici_network
 
   dashboard:
     build: ./dashboard
-    container_name: g23_dashboard
+    container_name: ecobici_dashboard
     env_file: .env
     environment:
       - SOURCE_DB_HOST=data_warehouse
@@ -85,7 +86,7 @@ services:
         condition: service_healthy
     restart: "no"
     networks:
-      - g23_network
+      - ecobici_network
 
 volumes:
   airflow_db_data:
@@ -94,6 +95,6 @@ volumes:
   data_warehouse_data:
 
 networks:
-  g23_network:
-    name: g23_network
+  ecobici_network:
+    name: ecobici_network
     driver: bridge

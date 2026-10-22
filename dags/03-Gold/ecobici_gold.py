@@ -22,7 +22,7 @@ DB_URI = (
 @dag(
     dag_id="gold_ecobici",
     start_date=datetime(2026, 1, 1),
-    schedule= "10-59/15 * * * *",
+    schedule="10-59/15 * * * *",
     catchup=False,
     is_paused_upon_creation=False,  # Activo por defecto como pide la cátedra
     tags=["prod", "gold", "modelado_dimensional", "ecobici"],

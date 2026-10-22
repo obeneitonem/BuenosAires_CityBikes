@@ -1,5 +1,6 @@
 # TP Final - CityBikes EcoBici Buenos Aires
 
+
 ## API elegida
 
 - **Nombre**: CityBikes - EcoBici Buenos Aires
@@ -73,7 +74,6 @@ El dashboard buscara responder preguntas como:
 ## Como levantar el stack
 
 ```bash
-cd TpFinal/grupos/G23/
 cp .env.example .env
 docker compose up -d --build
 # Esperar ~30s a que Airflow termine de inicializar
@@ -89,3 +89,7 @@ docker compose up -d --build
 docker compose down
 docker compose down -v
 ```
+
+## Estructura del proyecto
+
+Ver la seccion **"Esqueleto de entrega"** en [`TpFinal/README.md`](../../README.md).
