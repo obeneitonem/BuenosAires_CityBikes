@@ -48,7 +48,7 @@ def _clean_text(value):
 @dag(
     dag_id="ecobici_silver",
     start_date=datetime(2026, 1, 1),
-    schedule="*/15 * * * *",
+    schedule="5-59/15 * * * *",
     catchup=False,
     is_paused_upon_creation=False,
     tags=["prod", "silver", "citybikes", "ecobici"],
